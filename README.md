@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="250" height="250" src="https://github.com/rohan-bhautoo/Gym-Software/blob/main/gym_software_logo.png">
+  <img width="200" height="200" src="https://github.com/rohan-bhautoo/Gym-Software/blob/main/gym_software_logo.png">
 </p>
 <h1 align="center">Gym Software</h1>
 <p>
@@ -10,4 +10,4 @@
 </p>
 
 ## Description
-> The Gym-Software is a network application, based in Java, which utilises multi-threaded programming and is connected to a database.
+> The Gym Software is a network application, based in Java, which utilises multi-threaded programming and is connected to a database.
