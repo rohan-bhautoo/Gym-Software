@@ -6,7 +6,6 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-brightgreen.svg" />
   <img alt="Java" src="https://img.shields.io/badge/Java-ED8B00?logo=java&logoColor=white" />
   <img alt="MariaDB" src="https://img.shields.io/badge/MariaDB-964B00?logo=mariadb&logoColor=white" />
-  <img alt="VS_Code" src="https://img.shields.io/badge/Visual_Studio_Code-0078d7?logo=visualstudiocode&logoColor=white" />
   <img alt="JDK" src="https://img.shields.io/badge/JDK->=11.0.14-blue.svg" />
 </p>
 
