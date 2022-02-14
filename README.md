@@ -14,6 +14,9 @@
 > The Gym Software is a network application, based in Java, which utilises multi-threaded programming and is connected to a database. The sofware implementation will enable staff members to add, update, delete and view the bookings of each client.
 > 
 > With the use of multi-threading, the Gym Software will be accessible to mutiple clients to connect at the same time and interact with the database.
+<p align="center">
+  <img height="400" src="https://github.com/rohan-bhautoo/Gym-Software/blob/main/Images/Main.png">
+</p>
 
 ## Prerequisite
 
@@ -34,7 +37,7 @@ set JAVA_HOME="C:\[Path to folder]\Java\jdk-11.0.14
   <img height="400" src="https://github.com/rohan-bhautoo/Point-Of-Sales-System/blob/master/Screenshots/Env%20Variable.png">
 </p>
 
-## MariaDB
+### MariaDB
 > MariaDB Server is one of the most popular open source relational databases. It’s made by the original developers of MySQL and guaranteed to stay open source. It is part of most cloud offerings and the default in most Linux distributions. Download it [here](https://mariadb.org/download/).
 > 
 > The five tables below will be used to store information in the database.
@@ -89,11 +92,56 @@ set JAVA_HOME="C:\[Path to folder]\Java\jdk-11.0.14
 </td></tr>
 </table>
 
+### JDBC Driver
+> A JDBC driver is a software component enabling a Java application to interact with a database. 
+> 
+> To connect with individual databases, JDBC (the Java Database Connectivity API) requires drivers for each database. The JDBC driver gives out the connection to the database and implements the protocol for transferring the query and result between client and database. Download the JDBC Driver [here](https://www.mysql.com/products/connector/).
+
 ## Software Design
+> A Server-Client setup refers to socket programming in Java where a client sends messages to the server and the server shows them using a socket connection.
+> 
+> A socket in Java is one endpoint of a two-way communication link between two programs running on the network. A socket is bound to a port number so that the TCP layer can identify the application that data is destined to be sent to.
+<p align="center">
+  <img height="200" src="https://github.com/rohan-bhautoo/Gym-Software/blob/main/Images/Socket-connection.png">
+</p>
 
 ### Server
+> The server will instantiate its object and wait for the client request. Once the client sends the request, the server will communicate back with the response.
+> 
+> The ServerSocket is binded to the port number 8080, which is passed as an argument to the constructor of the class ServerSocket.
+```java
+final int PORT = 8080;
+try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+  while (true) {
+    Socket socket = serverSocket.accept();
+    new Thread(new ServerRunnable(socket)).start();
+  }
+}
+```
+
+> The getOutputStream() method is used to send the output through the socket.
+```java
+OutputStream outputStream = socket.getOutputStream();
+```
+
+> The getInputStream() method is used to receive messages, through the socket, from the Client side.
+```java
+InputStream inputStream = socket.getInputStream();
+```
+
+> Database connection is set in the [ServerRunnable.java](/Gym%20Software/src/ServerRunnable.java).
+```java
+private Connection connection = Database.connectDb();
+```
 
 ### Client
+> In order to establish a connection to the server, a socket is required.
+```java
+String hostName = "localhost";
+int port = 8080;
+Socket socket = new Socket(hostName, port);
+```
+> where the first argument is the IP addres of Server (127.0.0.1/localhost) and the second argument is the TCP port which will be the same on the server-side. 
 
 ### Testing
 > Testing shows that the software has meet its requirements and it is printing the expected output.
@@ -136,6 +184,54 @@ mysql -u root -p
 
 ```sh
 source C:\[Path to folder]\SQL\GymTable.sql
+```
+> The [Server.java](/Gym%20Software/src/Server.java) will have to be executed first, then the [Client.java](/Gym%20Software/src/Client.java).
+```sh
+javac *.java
+```
+```sh
+java Server
+```
+```sh
+java Client
+```
+
+### Commands
+> Use the following commands in order to use the software.
+
+#### Add Booking
+```sh
+ADD <BookingID> <BookingDate> <StartTime> <ClientID> <SpecialismID> <TrainerID>
+```
+
+#### List All Bookings
+```sh
+LISTALL
+```
+
+#### List Personal Trainer
+```sh
+LISTPT <TrainerID>
+```
+
+#### List Client Bookings
+```sh
+LISTCLIENT <ClientID>
+```
+
+#### List Booking Date
+```sh
+LISTDAY <BookingDate>
+```
+
+#### Update Booking
+```sh
+UPDATE UPDATE <BookingDetail> <NewValue> <BookingID>
+```
+
+#### Delete Booking
+```sh
+DELETE <BookingID>
 ```
 
 ## Author
