@@ -26,7 +26,7 @@
 ```sh
 set JAVA_HOME="C:\[Path to folder]\Java\jdk-11.0.14
 ```
-> Enter the Environment Vairables in System Properties.
+> Enter the Environment Variables in System Properties.
 > 
 > Add **%JAVA_HOME%\bin** into Path.
 ```sh
