@@ -52,7 +52,7 @@ set JAVA_HOME="C:\[Path to folder]\Java\jdk-11.0.14
   <tr><td>
          
 | TrainerID (PK) | 
-| -------------- |
+| :------------- |
 | Name           |   
 | Sex            |   
 | Phone          |
@@ -60,14 +60,14 @@ set JAVA_HOME="C:\[Path to folder]\Java\jdk-11.0.14
 </td><td>
       
 | ClientID (PK) |
-| ------------- |
+| :------------ |
 | ClientName    |
 | Weight        |
       
 </td><td>
     
 | SpecialismID (PK) |
-| ----------------- |
+| :---------------- |
 | Focus             |
 | Duration          |
 | Cost              |
@@ -75,7 +75,7 @@ set JAVA_HOME="C:\[Path to folder]\Java\jdk-11.0.14
 </td><td>
       
 | BookingID (PK)    |
-| ----------------- |
+| :---------------- |
 | BookingDate       |
 | StartTime         |
 | ClientID (FK)     |
@@ -85,7 +85,7 @@ set JAVA_HOME="C:\[Path to folder]\Java\jdk-11.0.14
 </td><td>
     
 | SpecialismID (FK) |
-| ----------------- |
+| :---------------- |
 | TrainerID (FK)    |
     
 </td></tr>
