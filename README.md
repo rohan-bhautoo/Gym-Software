@@ -10,7 +10,7 @@
 </p>
 
 ## Description
-> The Gym Software is a network application, based in Java, which utilises multi-threaded programming and is connected to a database. The sofware implementation will enable staff members to add, update, delete and view the bookings of each client.
+> The Gym Software is a network application, based in Java, which utilises multi-threaded programming and is connected to a database. The software implementation will enable staff members to add, update, delete and view the bookings of each client.
 > 
 > With the use of multi-threading, the Gym Software will be accessible to mutiple clients to connect at the same time and interact with the database.
 <p align="center">
